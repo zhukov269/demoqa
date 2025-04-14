@@ -1,4 +1,4 @@
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
@@ -7,8 +7,8 @@ public class SimpleJUnitTest {
 
    @Test
     void firstTest() {
-       int result = getResult();
-       System.out.println("###     firstTest()");
+       //int result = getResult();
+      // System.out.println("###     firstTest()");
         Assertions.assertTrue(3 > 2);
     }
 }
