@@ -11,7 +11,7 @@ public class SimpleJUnitTest {
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
-        Configuration.holdBrowserOpen = true;
+//        Configuration.holdBrowserOpen = true;
     }
 
    @Test
@@ -32,8 +32,14 @@ public class SimpleJUnitTest {
 
        $("#subjectsInput").setValue("English").pressEnter(); //Subject
 
-       $("label[for=hobbies-checkbox-1]").click();
-       $$("label").findBy(text("Music")).click();
+       //Хобби. Как надо делать
+
+       $("#hobbiesWrapper").$(byText("Sports")).click();
+       $("#hobbiesWrapper").$(byText("Music")).click();
+
+       // Как не надо делать
+//       $("label[for=hobbies-checkbox-1]").click();
+//       $$("label").findBy(text("Music")).click();
 
        $("#uploadPicture").uploadFromClasspath("img.png"); // Загрузка картинки
 
@@ -41,9 +47,14 @@ public class SimpleJUnitTest {
 
 
        $("#state").scrollIntoView(true).click();
-       $("#react-select-3-option-2").click();
+       $("#react-select-3-input").setValue("Haryana").pressEnter();
        $("#city").click();
-       $("#react-select-4-option-1").click();
+       $("#react-select-4-input").setValue("Panipat").pressEnter();
+
+       //
+//       $("#react-select-3-option-2").click();
+//       $("#react-select-4-option-1").click();
+
 
        $("#submit").click();
 
